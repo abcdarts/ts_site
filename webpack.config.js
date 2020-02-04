@@ -3,7 +3,7 @@ const path = require("path");
 
 module.exports = {
   // 省略
-  entry: "./src/ts/test.ts",
+  entry: "./src/ts/main.ts",
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "main.js"
@@ -12,12 +12,7 @@ module.exports = {
     rules: [
       {
         test: /(\.s[ac]ss)$/,
-        use: [
-          "style-loader",
-          "css-loader",
-          "postcss-loader",
-          "sass-loader"
-        ]
+        use: ["style-loader", "css-loader", "postcss-loader", "sass-loader"]
       },
       {
         test: /\.tsx?$/,
@@ -30,5 +25,4 @@ module.exports = {
     extensions: [".tsx", ".ts", ".js"]
   },
   plugins: [new HtmlWebpackPlugin({ template: "./src/index.html" })]
-  // 省略
 };
